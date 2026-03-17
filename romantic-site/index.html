@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Eashmal 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffd6e7, #fff0f5);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 2.2em;
+      color: #ff4d88;
+    }
+
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 6s infinite;
+    }
+
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+
+    /* SLIDESHOW */
+    .slideshow {
+      position: relative;
+      max-width: 300px;
+      margin: 40px auto;
+    }
+
+    .slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .active {
+      display: block;
+      opacity: 1;
+      position: relative;
+    }
+
+    video, img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .lock {
+      margin-top: 40px;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      background: #ff4d88;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<h1>This website is for the prettiest girl ever <br>Eashmal Waqar</h1>💖Talha Loves you the most
+
+<!-- SLIDESHOW -->
+<div class="slideshow" id="slideshow">
+  <!-- ADD YOUR 19 PICS + 10 VIDEOS HERE -->
+
+<img src="photo1.jpg.jpeg">
+<img src="photo2.jpg.jpeg">
+<img src="photo3.jpg.jpeg">
+<img src="photo4.jpg.jpeg">
+<img src="photo5.jpg.jpeg">
+<img src="photo6.jpg.jpeg">
+<img src="photo7.jpg.jpeg">
+<img src="photo8.jpg.jpeg">
+<img src="photo9.jpg.jpeg">
+<img src="photo10.jpg.jpeg">
+<img src="photo11.jpg.jpeg">
+<img src="photo12.jpg.jpeg">
+<img src="photo13.jpg.jpeg">
+<img src="photo14.jpg.jpeg">
+<img src="photo15.jpg.jpeg">
+<img src="photo16.jpg.jpeg">
+<img src="photo17.jpg.jpeg">
+<img src="photo18.jpg.jpeg">
+  <!-- VIDEOS -->
+  <video class="slide" src="video1.mp4.mp4" muted></video>
+  <video class="slide" src="video2.mp4.mp4" muted></video>
+  <video class="slide" src="video3.mp4.mp4" muted></video>
+  <video class="slide" src="video4.mp4.mp4" muted></video>
+  <video class="slide" src="video5.mp4.mp4" muted></video>
+  <video class="slide" src="video6.mp4.mp4" muted></video>
+  <video class="slide" src="video7.mp4.mp4" muted></video>
+  <video class="slide" src="video8.mp4.mp4" muted></video>
+  <video class="slide" src="video9.mp4.mp4" muted></video>
+  <video class="slide" src="video10.mp4.mp4" muted></video>
+</div>
+
+<!-- Singer Unlock -->
+<div class="lock">
+  <h2>Type "bael" to unlock something </h2>
+  <input type="password" id="baelcode" placeholder="Enter code">
+  <button onclick="unlockSinger()">Unlock</button>
+</div>
+
+<div id="singer" class="hidden">
+  <h2>VLOOG GLANCE 💫</h2>
+  <video controls src="singer.mp4.mp4"></video>
+</div>
+
+<!-- Special Messages -->
+<div class="lock">
+  <h2>Special message from Fiza  💌</h2>
+  <input type="password" id="smolcode" placeholder="Enter code">
+  <button onclick="unlockMessages()">Unlock</button>
+</div>
+
+<div id="messages" class="hidden">
+  <h2>For You ❤️</h2>
+  <p>To my Haeshmail Janu, the one who turned ordinary moments into memories… From random ‘yaad hai?’ moments to making new memories every day… and sharing every possible gossip to me 😝 love you always, no matter what. We started as normal friends aur ab dekho… full time clowns 🤡😭 har memory either embarrassing hai ya iconic 💀 but honestly, wouldn’t trade this madness for anything. Honestly, humari friendship ka koi sense nahi banta 😭 but it works somehow 💀 tu annoying bhi hai aur zaroori bhi 🫶. And I miss our daily meet ups (tusion wale 😔🥺). Love Foxa 🫦.</p>
+
+</div>
+
+<script>
+  function createHearts() {
+    const container = document.getElementById('hearts');
+    for (let i = 0; i < 25; i++) {
+      let heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      container.appendChild(heart);
+    }
+  }
+
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlides() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      if (!s.paused) s.pause?.();
+    });
+
+    currentSlide++;
+    if (currentSlide >= slides.length) currentSlide = 0;
+
+    const current = slides[currentSlide];
+    current.classList.add('active');
+
+    if (current.tagName === 'VIDEO') {
+      current.play();
+    }
+
+    setTimeout(showSlides, 2500);
+  }
+
+  function unlockSinger() {
+    const code = document.getElementById('baelcode').value;
+    if (code === "bael") {
+      document.getElementById('singer').classList.remove('hidden');
+    } else {
+      alert("Wrong code 💔");
+    }
+  }
+
+  function unlockMessages() {
+    const code = document.getElementById('smolcode').value;
+    if (code === "smoldih") {
+      document.getElementById('messages').classList.remove('hidden');
+    } else {
+      alert("Wrong code 💔");
+    }
+  }
+
+  createHearts();
+  setTimeout(showSlides, 2000);
+</script>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgmusic" src="music.mp3.mp3" loop></audio>
+
+  <script>
+    // Try autoplay, fallback to first interaction
+    const music = document.getElementById('bgmusic');
+    function startMusic() {
+      music.play().catch(() => {});
+      document.removeEventListener('click', startMusic);
+    }
+    window.addEventListener('load', () => {
+      music.volume = 0.5; // soft romantic volume
+      music.play().catch(() => {
+        document.addEventListener('click', startMusic);
+      });
+    });
+  </script>
+
+</body>
+</html>
